@@ -1,0 +1,206 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+
+typedef struct listNode
+{
+        int data;
+        struct listNode* next;
+}node;
+
+node* addListNodeSorted(node* start, int elem)
+{
+        node* temp=NULL;
+        temp=(node*)malloc(sizeof(node));
+        if(temp==NULL)
+        {
+                printf("Memory allocation failed. Exiting program.\n");
+                exit(1);
+        }
+
+        temp->data= elem;
+        temp->next= NULL;
+
+        if(start==NULL)
+        {
+                return temp;
+        }
+
+        node* ptr=start;
+
+        if(elem > ptr->data)
+        {
+                temp->next=ptr;
+                return temp;
+        }
+
+        node* prec=start;
+
+        while(ptr!=NULL)
+        {
+
+                if(ptr->data < elem)
+                {
+                        prec->next=temp->next;
+                        prec->next=temp;
+                        return start;
+                }
+
+                prec=ptr;
+                ptr=ptr->next;
+        }
+
+        prec->next=temp;
+        return start;
+}
+
+void freeListNodeSorted(node* start)
+{
+        if(start==NULL)
+        {
+                exit(0);
+        }
+        
+        node*ptr=start;
+
+        while(ptr!=NULL)
+        {
+                start=start->next;
+                free(ptr);
+                ptr=start;
+        }
+
+}
+
+
+int isPresentListNodeSorted(node* start, int elem)
+{
+        node* ptr= start;
+        int count=0;
+
+        while(ptr!=NULL && (ptr->data >= elem))
+        {
+                count++;
+                if(ptr->data == elem)
+                {
+                        return count;
+                }
+                ptr=ptr->next;
+        }
+
+        return count;
+}
+
+node* deleteListNodeSorted(node* start, int elem)
+{
+        if(start==NULL)
+        {
+                return NULL;
+        }
+
+        node* ptr= start;
+
+        if(start->data == elem)
+        {
+                start=start->next;
+
+                free(ptr);
+
+                printf("Deleted %d.\n",elem);
+
+                return start;
+        }
+
+        node* prev= start;
+
+        while(ptr!=NULL)
+        {
+                if(ptr->data==elem)
+                {
+                        prev->next=ptr->next;
+                        free(ptr);
+                        printf("Deleted %d.\n",elem);
+                        return start;
+                }
+                prev=ptr;
+                ptr=ptr->next;
+        }
+
+        printf("Data not found.\n");
+        return start;
+}
+
+void printLinkedList(node* start)
+{
+        if(start==NULL)
+        {
+                printf("NULL\n");
+                return;
+        }
+
+        node* printPtr=start;
+
+        printf("Start->");
+
+        while(printPtr!=NULL)
+        {
+                printf(" %d ->",printPtr->data);
+                printPtr=printPtr->next;
+        }
+        printf(" NULL\n");
+}
+
+
+int main(){
+
+        node* head=NULL;
+        int element, rvalue, option;
+        while(1){
+            
+         printf("\nEnter operation to perform: \n\n\t1. Add data to list\n\t2. Search for a data\n\t3. Remove a data from list\n\t4. Print the list.\n\t5. Exit\n\nEnter option: ");
+         scanf("%d",&option);
+
+         switch(option)
+         {
+                case 1: printf("Enter data to add: ");
+                        scanf("%d", &element);
+
+                        head=addListNodeSorted(head, element);
+                        printf("Added %d successfully.\n",element);
+                        break;
+
+                case 2: printf("Enter data to search: ");
+                        scanf("%d",&element);
+                        rvalue=isPresentListNodeSorted(head, element);
+
+                        if(rvalue==0)
+                        {
+                                printf("Data not found in the list.\n");
+                                break;
+                        }
+
+                        printf("Data found at position: %d",rvalue);
+                        break;
+
+                case 3: printf("Enter data to delete: ");
+                        scanf("%d",&element);
+
+                        head=deleteListNodeSorted(head, element);
+                        break;
+
+                case 4: printf("Printng list:\n\t");
+                        printLinkedList(head);
+                        break;
+
+                case 5: printf("Exiting program.\n");
+                        freeListNodeSorted(head);
+                        exit(0);
+                        
+                default: printf("Enter valid option.\n");
+        }
+       }
+
+       return 0;
+}
+
+
