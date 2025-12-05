@@ -22,7 +22,7 @@ public:
 int main() {
   int soln;
   solution obj1;
-  std::vector<int> vec = {1, 1, 2};
+  std::vector<int> vec = {1, 1, 2, 2, 3, 3, 20, 35, 35, 50, 50, 100, 100, 101};
   soln = obj1.removeDuplicates(vec);
   std::cout << soln << endl;
   for (int i : vec) {
