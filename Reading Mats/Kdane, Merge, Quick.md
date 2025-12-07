@@ -207,8 +207,8 @@ Quick Sort's space complexity is determined by the recursion call stack.
 Quick Sort is an **in-place** sorting algorithm. However, most standard implementations are **not stable**. To mitigate worst-case performance, a hybrid algorithm called **Introsort** is often used, which switches to Heapsort if recursion depth becomes too large.
 
 ### **2.6. A Comprehensive C++ Implementation**
-
-\#include \<iostream\>  
+```C++
+include \<iostream\>  
 using namespace std;
 
 // Function to swap two elements  
@@ -263,7 +263,7 @@ int main() {
     printArray(arr, n);  
     return 0;  
 }
-
+```
 ## **Part III: Kadane's Algorithm: A Dynamic Programming Solution**
 
 ### **3.1. Foundational Principles: Dynamic Programming Meets Greed**
@@ -300,10 +300,10 @@ A common pitfall is when all elements are negative. If max\_ending\_here is rese
 * **Space Complexity:** $O(1)$ (Constant variables).
 
 ### **3.6. A Comprehensive C++ Implementation**
-
-\#include \<iostream\>  
-\#include \<algorithm\> // For std::max  
-\#include \<limits\> // For std::numeric\_limits
+```C++
+include \<iostream\>  
+include \<algorithm\> // For std::max  
+include \<limits\> // For std::numeric\_limits
 
 int maxSubarraySum(int arr\[\], int size) {  
     // Initialize max\_so\_far to the smallest possible integer value  
@@ -353,7 +353,7 @@ int main() {
 
     return 0;  
 }
-
+```
 ## **Part IV: Synthesis and Comparative Analysis**
 
 ### **4.1. Merge Sort vs. Quick Sort: A Head-to-Head Comparison**
