@@ -36,8 +36,8 @@ public:
 };
 
 int main() {
-  int k = 2, res;
-  std::vector<int> vec = {0};
+  int k = 3, res;
+  std::vector<int> vec = {0,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,1,1,0};
   solution s;
   res = s.maxConsecutiveOnes(vec, k);
   std::cout << res << endl;
