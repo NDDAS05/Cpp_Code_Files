@@ -5,6 +5,10 @@
 class Solution {
 public:
   void merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n) {
+    // If we sort it from the front,
+    // Data of nums1 will get deleted.
+    // Since nums1 has all 0s at the back,
+    // We sort from LAST.
     int i = m - 1, j = n - 1, k = m + n - 1;
     while (i >= 0 && j >= 0) {
       if (nums1[i] >= nums2[j]) {
