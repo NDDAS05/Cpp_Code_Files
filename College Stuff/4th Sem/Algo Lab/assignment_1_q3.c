@@ -56,7 +56,6 @@ void insertionSort(int *arr, int n) {
     }
 }
 
-// 3. Quick Sort
 int partition(int *arr, int low, int high) {
     int pivot = arr[high];
     int i = (low - 1);
