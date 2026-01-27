@@ -1,9 +1,11 @@
 # C++ Lambdas & Compiler Optimizations
 
 1. What is a Lambda Function?
+
 A Lambda is a "local" or "anonymous" function defined directly inside another function. Unlike a standard helper function which lives separately in the class, a Lambda lives where it is created.
 
 ### Key Benefits:
+
  * **Locality**: Keeps related logic together (no scrolling up and down).
 
  * **Access**: Can see and modify local variables without needing them passed as arguments.
@@ -45,6 +47,7 @@ auto lambdaName = [captures] (parameters) {
 To the compiler, a Lambda is not just a function. It is a Class Object.
 
 ### The Transformation:
+
 When you write a lambda, the compiler secretly creates a unique class (a "Functor") for it.
 
  * Captured variables ([&]) become member variables of that class.
@@ -80,7 +83,9 @@ Scenario: You are working in a workshop.
    * You hire a contractor for one job. They don't live there.
    * They don't know where your tools are.
    * You must hand them everything explicitly: "Here is the hammer (nums), here are the nails (k)." If you forget one, they fail.
+
  * Lambda (The Robot):
+
    * A robot that lives inside the workshop room.
    * It has "State". It can see the hammer on the table.
    * You just say: "Robot, build this." It grabs the tools itself because it shares your environment ([&] capture).
@@ -90,14 +95,18 @@ Scenario: You are working in a workshop.
 ## Why was the Lambda solution faster?
 
  * Bitwise Operations:
+
    * x % 2 (Division) is slow for the CPU.
    * x & 1 (Bitwise AND) is instant.
 
  * Instruction Cache:
+
    * Because the Lambda is "Inlined" (stapled to the main recipe), the CPU executes instructions sequentially without "jumping" around RAM to find the helper function.
 
 7. Code Reference (Sliding Window Pattern)
+
 Old Way (Helper):
+
 ```cpp
 // Separate function
 int countHelper(vector<int>& nums, int k) { ... } 
