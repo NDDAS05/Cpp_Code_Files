@@ -1,6 +1,5 @@
-Here is the formatted content from the PDF. I have cleaned up the layout, fixed the code blocks that were split across pages, and organized the sections for better readability while ensuring all the key information, warnings, and best practices are included.
 
-````markdown:introduction to std::string:introduction_std_string.md
+
 # 5.7 — Introduction to std::string
 
 In lesson 5.2 -- Literals, we introduced C-style string literals:
@@ -13,7 +12,7 @@ int main()
     std::cout << "Hello, world!"; // "Hello world!" is a C-style string literal.
     return 0;
 }
-````
+```
 
 While C-style string literals are fine to use, C-style string variables behave oddly, are hard to work with (e.g., you can't use assignment to assign a C-style string variable a new value), and are dangerous (e.g., if you copy a larger C-style string into the space allocated for a shorter C-style string, undefined behavior will result). In modern C++, C-style string variables are best avoided.
 
