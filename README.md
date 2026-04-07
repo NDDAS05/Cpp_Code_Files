@@ -4,7 +4,7 @@ A repo for C++ practicing and viewing across **Linux**, **Windows** and **Androi
 ## Structure
 
 ### Contains:
-1. **Code Files** : For Cp, LeetCode problem practice files.
-2. **College Stuff** : College lab contents.
-3. **Reading Mats** : Some materials regarding `Code Files` folder.
+1. **files** : For Cp, LeetCode problem practice files.
+2. **college_stuff** : College lab contents.
+3. **reading_mats** : Some materials regarding `files` folder.
 ___
