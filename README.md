@@ -11,15 +11,11 @@ Cpp_Code_Files
 |
 |__ README.md
 ```
-```
-```
 
-```
-```
-```
-```
 ### Contains:
 1. **files** : For Cp, LeetCode problem practice files.
+
 2. **patterns_grouped** : Pattern wise questions grouped for easy solving or revising.
+
 3. **reading_mats** : Some materials regarding `files` folder.
 ___
