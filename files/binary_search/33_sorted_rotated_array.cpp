@@ -125,8 +125,10 @@ public:
 };
 
 int main() {
-  vector<int> vec = {4, 0, 1, 2, 3};
+  vector<int> vec = {1, 2, 3, 4, 0, 1, 1, 1, 1};
   solution s;
-  cout << s.search(vec, 4) << endl;
+  int target;
+  cin >> target;
+  cout << s.search_optimized(vec, target) << endl;
   return 0;
 }
