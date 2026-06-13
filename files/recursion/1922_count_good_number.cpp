@@ -33,7 +33,7 @@ public:
         // Total: 5^(n+1/2) * 4^(n/2).
         
         // All we need is to calculate this power.
-        long long mod = 100000007;
+        long long mod = 1000000007;
         long long ans1 = power(5, (n+1)/2, mod);
         long long ans2 = power(4, n/2, mod);
 
