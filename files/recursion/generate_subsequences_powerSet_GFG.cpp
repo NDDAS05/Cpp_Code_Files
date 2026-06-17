@@ -10,7 +10,6 @@ class Solution {
             st.push_back(currStr);
             return;
         }
-        
         // Two options: Take it or leave it
         // Leaving it.
         allSubstr(pos+1, s, currStr, st);
