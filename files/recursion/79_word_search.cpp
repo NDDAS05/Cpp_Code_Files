@@ -93,6 +93,7 @@ public:
 // We could have done the same in the earlier approach.
 class solution2{
 public:
+    int m,n;
     vector<vector<int>> directions{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     
     bool find(vector<vector<char>>& board, int i, int j, int idx, string& word) {
@@ -122,8 +123,9 @@ public:
     }
 
     bool exist(vector<vector<char>>& board, string word) {
-        int m = board.size();
-        int n = board[0].size();
+        m = board.size();
+        n = board[0].size(); 
+        // m,n declared globally so that we do not need to pass them.
 
         for(int i = 0; i < m; i++) {
             for(int j = 0; j < n; j++) {
