@@ -1,3 +1,5 @@
+// Optimal Soln requires Requires an advanced data structure (BIT/Segment Tree) for the truly optimal solution.
+
 /*Given an array of arr[] and Q queries of indices. For each query indices[i], determine the count of elements in arr that are strictly greater than arr[indices[i]] to its right (after the position indices[i]).
 
 Examples :
