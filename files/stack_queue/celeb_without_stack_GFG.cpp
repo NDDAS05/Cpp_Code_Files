@@ -46,24 +46,42 @@ class Solution {
             // If j knows i, j-- j eleminted.
             // If ij = 0, 1) if ji = 0 both are not celeb
             //            2) if ji = 1 i is a possible celeb. But j is not.
+            // Notice: If i doesnt know j, j is not celebrity. Why, because everyone MUST know celeb.
+
+            // if ij= 0, hold on to i
+            // At every step someone is eleminated..
+            // 0 0: surely j is not celebrity. So is i. This variation only eleminates one at a time. so j is not celeb j--
+            // Whatever is about j: i does not know j. j is not celeb
+
+            // 0 1: Again, idk j. but i does not know j, so j is not celeb.
             
+            // 1 0: i knows j. So i is not celeb
+            // 1 1: i knows j. So i is not celeb.
+
+ 
+            if(mat[i][j] == 1) i++;
+            else j--;
+
+
+            // ======================================================
             // Only 4 combs possible: 00 01 10 11
-            if(mat[i][j] == 0 && mat[j][i] == 0){
-                i++;
-                j--;
-            }
-            else if(mat[i][j] == 0 && mat[j][i] == 1){
-                // i is potential not j.
-                j--;
-            }
-            else if(mat[i][j] == 1 && mat[j][i] == 0){
-                i++;
-            }
+            // if(mat[i][j] == 0 && mat[j][i] == 0){
+            //     i++;
+            //     j--;
+            // }
+            // else if(mat[i][j] == 0 && mat[j][i] == 1){
+            //     // i is potential not j.
+            //     j--;
+            // }
+            // else if(mat[i][j] == 1 && mat[j][i] == 0){
+            //     i++;
+            // }
             
-            else{ // ij = 1 and ji 1
-                i++;
-                j--;
-            }
+            // else{ // ij = 1 and ji 1
+            //     i++;
+            //     j--;
+            // }
+            // ========================================================
         }
         
         // Now we do not know anything about this specific element.
