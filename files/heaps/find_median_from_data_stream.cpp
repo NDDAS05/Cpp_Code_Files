@@ -1,3 +1,9 @@
+// We can not do single heap based approach because, here if we try to find nth largest as such, n keeps changing
+// after every iteration. What that means is we can not keep fixed TOP K ELEMENTS in array like that.
+
+// Since n size changes, the required sample size also changes. Here n is variable. So when 4, mid is 2nd. For 6 middle is 3. But since upto 4 we are keeping like 2 ele in array we already missed some elements.
+
+
 // Idea: half elements in maxHeap (lower half [ 1 2 3 4 )
 // Half elements in minHeap (upper half 5 6 7 8])
 
