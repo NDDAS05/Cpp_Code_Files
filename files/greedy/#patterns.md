@@ -1,0 +1,5 @@
+- **Sort by end time** → interval scheduling, erase overlap intervals.
+- **Sort by value/weight** → fractional knapsack.
+- **Earliest deadline first** → job sequencing variants.
+- **Maintain farthest reachable point** → Jump Game.
+- **Maintain current resources/invariants** → Lemonade Change, Gas Station.
