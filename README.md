@@ -13,7 +13,7 @@ Cpp_Code_Files
 ```
 
 ### Contains:
-1. **files** : For Cp, LeetCode problem practice files.
+1. **files** : LeetCode problem practice files. Topic-wise grouped.
 
 2. **patterns_grouped** : Pattern wise questions grouped for easy solving or revising.
 
