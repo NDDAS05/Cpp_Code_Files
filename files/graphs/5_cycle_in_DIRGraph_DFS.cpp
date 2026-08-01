@@ -2,13 +2,12 @@
 using namespace std;
 
 class Solution {
-    bool DFS(vector<vector<int>>& adjList, int currNode, vector<int>& visited,
-             vector<int>& dfsPath) {
+    bool DFS(vector<vector<int>>& adjList, int currNode, vector<int>& visited, vector<int>& dfsPath) {
         visited[currNode] = 1;
         dfsPath[currNode] = 1;
         for (auto& u : adjList[currNode]) {
             // Traverse if not visited already.
-            if (!visited[u]) {
+            if (!visited[u]) {  // not visited yet
                 if (DFS(adjList, u, visited, dfsPath))
                     return true;
             } else if (dfsPath[u] == 1) { // visited also dfsPath = 1.
@@ -16,7 +15,7 @@ class Solution {
             }
         }
         // backTrack
-        dfsPath[currNode] = 0;
+        dfsPath[currNode] = 0; // visited but not in rec stack
         return false;
     }
 
