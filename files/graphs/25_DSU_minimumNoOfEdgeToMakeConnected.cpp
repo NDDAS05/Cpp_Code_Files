@@ -1,5 +1,6 @@
 // Leetcode 1319
-
+#include <bits/stdc++.h>
+using namespace std;
 class DSU{
     vector<int> parent;
     vector<int> size;
