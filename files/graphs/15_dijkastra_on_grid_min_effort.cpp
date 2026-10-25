@@ -15,14 +15,14 @@ public:
     int minimumEffortPath(vector<vector<int>>& heights) {
         // Whenever graph problems have path with "unit/uniform" costs, then standard BFS works cuz it always gives the "shortest path"
 
-        // But Dijkastra comes when paths are not "uniform". Because, BFS technically gives path with "minimum number of edges." But if those edges that are included in "minimum number of edges" have very high edge weight, then they can not be called "shortest"
+        // But Dijkastra comes when paths are not "uniform". Because, BFS technically gives path with "minimum number of edges." But if those edges that are included in "minimum number of edges" have very high edge weight, then they can not be called "shortest".
 
         // Here that is why Dijkastra Comes in.
 
         // Dijkastra Logic: 
         // Put starting vertex in PQ (say {distance_from_src, node} format).
 
-        // Maintain a dist array. Set all to INT_MAX.
+        // Maintain a dist array. Set all to INT_MAX. src to 0.
 
         // While PQ is not empty
         // ---- Pop PQ. Get the node. Access its neighbours.
